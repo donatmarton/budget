@@ -1,13 +1,19 @@
 import React from 'react';
 import {nanoid} from 'nanoid'
 import CategoryList from './components/CategoryList';
-import {categoryData} from './data'
+import ExpenseList from './components/ExpenseList';
+import {categoryData, spendingsData} from './data'
 
 function App() {
   const [categories, setCategories] = React.useState([]);
+  const [expenses, setExpenses] = React.useState([]);
   React.useEffect(() => {
     // fetch category data ...
     setCategories(categoryData);
+  }, [])
+  React.useEffect(() => {
+    // fetch expenses data ...
+    setExpenses(spendingsData);
   }, [])
   const addCategory = (categoryName) => {
     const newCategory = {
@@ -28,6 +34,8 @@ function App() {
         Hello
       </p>
       <CategoryList categories={categories} addCategory={addCategory}/>
+      <h2>something something</h2>
+      <ExpenseList expenses={expenses} />
     </div>
   );
 }
