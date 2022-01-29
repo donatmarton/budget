@@ -1,9 +1,11 @@
 import React from "react";
+import DataContext from "../DataContext";
 import Expense from "./Expense";
 import "./ExpenseList.css"
 
-const ExpenseList = (props) => {
-  const expenseItems = props.expenses.map( expense => {
+const ExpenseList = () => {
+  const { expenses } = React.useContext(DataContext);
+  const expenseItems = expenses.map( expense => {
     return (
       <Expense 
         key={expense.id}

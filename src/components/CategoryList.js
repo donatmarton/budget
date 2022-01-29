@@ -1,8 +1,10 @@
 import React from "react";
+import DataContext from "../DataContext";
 import CategoryAdder from "./CategoryAdder";
 
-const CategoryList = (props) => {
-  const categoryItems = props.categories.map( category => {
+const CategoryList = () => {
+  const { categories, addCategory } = React.useContext(DataContext)
+  const categoryItems = categories.map( category => {
     return (
       <li key={category.id}>{category.name}</li>
     )
@@ -14,7 +16,7 @@ const CategoryList = (props) => {
       <ul>
         {categoryItems}
       </ul>
-      <CategoryAdder addCategory={props.addCategory}/>
+      <CategoryAdder addCategory={addCategory}/>
     </div>
   )
 }

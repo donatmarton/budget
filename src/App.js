@@ -3,6 +3,7 @@ import {nanoid} from 'nanoid'
 import CategoryList from './components/CategoryList';
 import ExpenseList from './components/ExpenseList';
 import {categoryData, spendingsData} from './data'
+import DataContext from './DataContext';
 
 function App() {
   const [categories, setCategories] = React.useState([]);
@@ -29,14 +30,18 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <p>
-        Hello
-      </p>
-      <CategoryList categories={categories} addCategory={addCategory}/>
-      <h2>something something</h2>
-      <ExpenseList expenses={expenses} />
-    </div>
+    <DataContext.Provider
+      value={{categories, expenses, addCategory}}
+    >
+      <div className="app">
+        <p>
+          Hello
+        </p>
+        <CategoryList />
+        <h2>something something</h2>
+        <ExpenseList />
+      </div>
+    </DataContext.Provider>
   );
 }
 
