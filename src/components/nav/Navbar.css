@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar__logo {
+  margin-right: auto;
+}
+
+.navbar__menu {
+  font-size: 1.4rem;
+  display: flex;
+  gap: 1rem;
+}
+
+

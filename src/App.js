@@ -4,6 +4,7 @@ import {categoryData, spendingsData} from './data'
 import DataContext from './DataContext';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/nav/Navbar';
+import './App.css'
 
 function App() {
   const [categories, setCategories] = React.useState([]);
