@@ -28,10 +28,20 @@ function App() {
       ]
     })
   }
-
+  const getCategoryNameFromId = (categoryId) => {
+    const foundCategory = categories.find( category => {
+      return category.id === categoryId;
+    })
+    return foundCategory?.name;
+  }
   return (
     <DataContext.Provider
-      value={{categories, expenses, addCategory}}
+      value={{
+        categories, 
+        expenses, 
+        addCategory,
+        getCategoryNameFromId,
+      }}
     >
       <div className="app">
         <Navbar />
