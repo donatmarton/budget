@@ -1,9 +1,9 @@
 import React from 'react';
 import {nanoid} from 'nanoid'
-import CategoryList from './components/CategoryList';
-import ExpenseList from './components/ExpenseList';
 import {categoryData, spendingsData} from './data'
 import DataContext from './DataContext';
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/nav/Navbar';
 
 function App() {
   const [categories, setCategories] = React.useState([]);
@@ -34,12 +34,8 @@ function App() {
       value={{categories, expenses, addCategory}}
     >
       <div className="app">
-        <p>
-          Hello
-        </p>
-        <CategoryList />
-        <h2>something something</h2>
-        <ExpenseList />
+        <Navbar />
+        <Outlet />
       </div>
     </DataContext.Provider>
   );

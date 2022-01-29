@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import DataContext from "../DataContext";
 import CategoryAdder from "./CategoryAdder";
 
@@ -6,13 +7,15 @@ const CategoryList = () => {
   const { categories, addCategory } = React.useContext(DataContext)
   const categoryItems = categories.map( category => {
     return (
-      <li key={category.id}>{category.name}</li>
+      <Link to={`categories/${category.id}`}>
+        <li key={category.id}>{category.name}</li>
+      </Link>
     )
   });
 
   return (
     <div className="category-list">
-      <p>Category List</p>
+      <h3>Category List</h3>
       <ul>
         {categoryItems}
       </ul>
