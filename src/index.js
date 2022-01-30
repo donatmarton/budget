@@ -16,7 +16,6 @@ import NotFound from './routes/NotFound'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>

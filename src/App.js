@@ -6,17 +6,21 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './components/nav/Navbar';
 import './App.css'
 
+
 function App() {
   const [categories, setCategories] = React.useState([]);
   const [expenses, setExpenses] = React.useState([]);
+
   React.useEffect(() => {
     // fetch category data ...
     setCategories(categoryData);
   }, [])
+  
   React.useEffect(() => {
     // fetch expenses data ...
     setExpenses(spendingsData);
   }, [])
+
   const addCategory = (categoryName) => {
     const newCategory = {
       id: nanoid(),
@@ -29,12 +33,30 @@ function App() {
       ]
     })
   }
+
   const getCategoryNameFromId = (categoryId) => {
     const foundCategory = categories.find( category => {
       return category.id === categoryId;
     })
     return foundCategory?.name;
   }
+
+  const addExpense = (expenseData) => {
+    const { name, amount, categoryId } = expenseData;
+    const newExpense = {
+      name,
+      amount,
+      categoryId,
+      id: nanoid(),
+    }
+    setExpenses( prevState => {
+      return [
+        ...prevState,
+        newExpense
+      ]
+    })
+  }
+
   return (
     <DataContext.Provider
       value={{
@@ -42,6 +64,7 @@ function App() {
         expenses, 
         addCategory,
         getCategoryNameFromId,
+        addExpense,
       }}
     >
       <div className="app">
