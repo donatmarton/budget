@@ -13,6 +13,7 @@ const ExpenseList = () => {
         amount={expense.amount}
         name={expense.name}
         category={categoryName}
+        date={expense.date}
       />
     )
   })

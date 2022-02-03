@@ -42,11 +42,12 @@ function App() {
   }
 
   const addExpense = (expenseData) => {
-    const { name, amount, categoryId } = expenseData;
+    const { name, amount, categoryId, date } = expenseData;
     const newExpense = {
       name,
       amount,
       categoryId,
+      date,
       id: nanoid(),
     }
     setExpenses( prevState => {
