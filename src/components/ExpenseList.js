@@ -7,13 +7,14 @@ const ExpenseList = () => {
   const { expenses, getCategoryNameFromId } = React.useContext(DataContext);
   const expenseItems = expenses.map( expense => {
     const categoryName = getCategoryNameFromId(expense.categoryId);
+    const dateString = expense.date.toLocaleDateString();
     return (
-      <Expense 
+      <Expense
         key={expense.id}
         amount={expense.amount}
         name={expense.name}
         category={categoryName}
-        date={expense.date}
+        date={dateString}
       />
     )
   })

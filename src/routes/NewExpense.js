@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../DataContext";
-import { stringifyDate } from "../dates"
+import { stringifyDate, parseDate } from "../dates"
 import "./NewExpense.css"
 
 
@@ -12,7 +12,7 @@ const NewExpense = () => {
     name: '',
     amount: '',
     categoryId: DEFAULT_SELECT,
-    date: stringifyDate(new Date()),
+    date: new Date(),
   });
   const navivate = useNavigate();
 
@@ -35,6 +35,8 @@ const NewExpense = () => {
     let value = event.target.value;
     if (name === "amount") {
       value = parseFloat(value);
+    } else if (name === "date") {
+      value = parseDate(value);
     }
     setExpenseData( prevState => ({
       ...prevState,
@@ -82,7 +84,7 @@ const NewExpense = () => {
           type="date"
           onChange={handleChange}
           name="date"
-          value={expenseData.date}
+          value={stringifyDate(expenseData.date)}
           required
         />
         <button type="submit">Save Expense</button>

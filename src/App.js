@@ -4,6 +4,7 @@ import {categoryData, spendingsData} from './data'
 import DataContext from './DataContext';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/nav/Navbar';
+import { parseDate } from './dates';
 import './App.css'
 
 
@@ -18,7 +19,13 @@ function App() {
   
   React.useEffect(() => {
     // fetch expenses data ...
-    setExpenses(spendingsData);
+    const convertedData = spendingsData.map( spending => {
+      return {
+        ...spending,
+        date: parseDate(spending.date),
+      }
+    })
+    setExpenses(convertedData);
   }, [])
 
   const addCategory = (categoryName) => {
