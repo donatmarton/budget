@@ -53,6 +53,15 @@ function App() {
       ]
     })
   }
+  const deleteCategory = (categoryId) => {
+    if (expenses.some(expense => expense.categoryId === categoryId)) {
+      alert("Can't delete category if it has expenses recorded with it. Remove expenses first.");
+    } else {
+      setCategories( prevState => {
+        return prevState.filter(category => category.id !== categoryId);
+      })
+    }
+  }
 
   const getCategoryNameFromId = (categoryId) => {
     const foundCategory = categories.find( category => {
@@ -77,6 +86,11 @@ function App() {
       ]
     })
   }
+  const deleteExpense = (expenseId) => {
+    setExpenses( prevExpenses => {
+      return prevExpenses.filter(expense => expense.id !== expenseId);
+    })
+  }
 
   return (
     <DataContext.Provider
@@ -84,8 +98,10 @@ function App() {
         categories, 
         expenses, 
         addCategory,
+        deleteCategory,
         getCategoryNameFromId,
         addExpense,
+        deleteExpense,
       }}
     >
       <div className="app">

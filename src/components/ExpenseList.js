@@ -11,6 +11,7 @@ const ExpenseList = ({ expenses }) => {
     return (
       <Expense
         key={expense.id}
+        id={expense.id}
         amount={expense.amount}
         name={expense.name}
         category={categoryName}
