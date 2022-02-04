@@ -1,13 +1,9 @@
 import React from "react";
-import DataContext from "../DataContext";
-import ExpenseList from "../components/ExpenseList";
 import ExpenseSum from "../components/ExpenseSum";
 import MonthSelector from "../components/MonthSelector";
 
 
 const Overview = () => {
-  const { expenses } = React.useContext(DataContext);
-
   const [filterSelection, setFilterSelection] = React.useState({
     month: (new Date().getMonth()),
     year: (new Date().getFullYear()),
