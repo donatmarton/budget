@@ -86,8 +86,8 @@ const NewExpense = () => {
           value={stringifyDate(expenseData.date)}
           required
         />
-        <button type="submit">Save Expense</button>
-        <button type="button" onClick={cancel}>
+        <button type="submit" className="btn">Save Expense</button>
+        <button type="button" onClick={cancel} className="btn btn--inverse">
           Cancel
         </button>
       </form>

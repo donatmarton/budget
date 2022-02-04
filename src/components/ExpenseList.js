@@ -21,7 +21,11 @@ const ExpenseList = ({ expenses }) => {
   })
   return (
     <ul className="expense-list">
-      <Link to="/expenses/new">New Expense</Link>
+      <Link to="/expenses/new">
+        <button className="btn">
+          New Expense
+        </button>
+      </Link>
       {expenseItems}
     </ul>
   )

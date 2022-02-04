@@ -25,3 +25,22 @@ a {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+.btn {
+  border: 0;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  font-weight: bold;
+  border-radius: 7px;
+  padding: 0.5rem; 
+  border: 1px solid transparent;
+}
+.btn:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.1s;
+}
+.btn--inverse {
+  background-color: var(--color-light);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}

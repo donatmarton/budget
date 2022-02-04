@@ -36,13 +36,17 @@ const CategoryAdder = (props) => {
               value={categoryName}
               required
             />
-            <button type="submit">Save</button>
-            <button type="button" onClick={close}>
+            <button className="btn" type="submit">Save</button>
+            <button 
+              className="btn btn--inverse"
+              type="button"
+              onClick={close}
+            >
               Cancel
             </button>
           </form>
         :
-          <button onClick={open}>
+          <button className="btn" onClick={open}>
             Add Category
           </button>
       }

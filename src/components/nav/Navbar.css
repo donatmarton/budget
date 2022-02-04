@@ -36,5 +36,4 @@
 .nav-link--active {
   color: var(--color-light);
   background-color: var(--color-accent);
-  border-radius: 4px;
 }
