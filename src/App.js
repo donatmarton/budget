@@ -3,6 +3,7 @@ import {nanoid} from 'nanoid'
 import DataContext from './DataContext';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/nav/Navbar';
+import { defaultCategories } from "./data"
 import './App.css'
 
 
@@ -16,7 +17,7 @@ function App() {
     if (parsedCategories) {
       setCategories(parsedCategories);
     } else {
-      console.log("initialize defaults")
+      defaultCategories.forEach( category => addCategory(category))
     }
   }, [])
   React.useEffect(() => {
