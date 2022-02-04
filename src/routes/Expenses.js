@@ -13,7 +13,11 @@ const Expenses = () => {
           New Expense
         </button>
       </Link>
-      <ExpenseList expenses={expenses} />
+      {expenses.length !== 0 ?
+        <ExpenseList expenses={expenses} />
+        :
+        <p>No expenses recorded. Add some.</p>
+      }
     </main>
   )
 }

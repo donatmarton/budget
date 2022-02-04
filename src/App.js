@@ -35,8 +35,6 @@ function App() {
         }
       })
       setExpenses(convertedData);
-    } else {
-      console.log("no expenses")
     }
   }, [])
   React.useEffect(() => {
