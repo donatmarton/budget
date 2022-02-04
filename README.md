@@ -1,13 +1,14 @@
 # Budget
-Personal budgeting tool.
+Personal budgeting tool. Available live at [budget.donatmarton.com](https://budget.donatmarton.com).
 
 
-## Features
+## Features and Roadmap
 
 
-- adding a category
-- adding expense with name, amount and category
-- sum up of monthly spendings split into categories
-- saving data to an external database (Firebase / Supabase)
-- tests https://create-react-app.dev/docs/running-tests/
-- sign up, log in, and handling multiple users
+- [x] adding a category
+- [x] adding expense with name, amount, category and date
+- [x] sum monthly spendings
+- [x] saving data to local storage
+- [x] delete expenses and categories
+- [ ] modify expenses and categories
+- [ ] monthly sum is split into categories
