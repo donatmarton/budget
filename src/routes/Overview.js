@@ -25,7 +25,6 @@ const Overview = () => {
   }
   return (
     <div>
-      <h2>Overview</h2>
       <h3>Sum</h3>
       <MonthSelector 
         notifyChange={updateFilter} 
@@ -36,8 +35,6 @@ const Overview = () => {
         beginDate={beginDate}
         endDate={endDate}
       />
-      <h3>Expenses</h3>
-      <ExpenseList expenses={expenses} />
     </div>
   )
 }

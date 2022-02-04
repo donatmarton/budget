@@ -46,7 +46,6 @@ const NewExpense = () => {
 
   return (
     <div className="new-expense">
-      <h2>NewExpense</h2>
       <form onSubmit={handleSubmit} className="new-expense__form">
         <input 
           type="text"

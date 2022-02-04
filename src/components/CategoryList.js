@@ -15,7 +15,6 @@ const CategoryList = () => {
 
   return (
     <div className="category-list">
-      <h3>Category List</h3>
       <ul>
         {categoryItems}
       </ul>

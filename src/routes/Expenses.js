@@ -7,9 +7,8 @@ const Expenses = () => {
   const { expenses } = React.useContext(DataContext);
   return (
     <div>
-      <h2>Expenses</h2>
-      <ExpenseList expenses={expenses} />
       <Outlet />
+      <ExpenseList expenses={expenses} />
     </div>
   )
 }
