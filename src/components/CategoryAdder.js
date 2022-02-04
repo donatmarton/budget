@@ -23,37 +23,33 @@ const CategoryAdder = (props) => {
   }
 
   return (
-    <div>
-      {
-        isOpen 
-        ? 
-          <form onSubmit={handleSubmit} className="input-form">
-            <input 
-              className="input-form__input"
-              type="text"
-              placeholder="Category name"
-              onChange={changeCategoryName}
-              name="categoryName"
-              value={categoryName}
-              required
-            />
-            <div className="input-form__row">
-              <button className="btn" type="submit">Save</button>
-              <button 
-                className="btn btn--inverse"
-                type="button"
-                onClick={close}
-              >
-                Cancel
-              </button>
-            </div>
-          </form>
-        :
-          <button className="btn" onClick={open}>
-            Add Category
+    isOpen 
+    ? 
+      <form onSubmit={handleSubmit} className="input-form">
+        <input 
+          className="input-form__input"
+          type="text"
+          placeholder="Category name"
+          onChange={changeCategoryName}
+          name="categoryName"
+          value={categoryName}
+          required
+        />
+        <div className="input-form__row">
+          <button className="btn" type="submit">Save</button>
+          <button 
+            className="btn btn--inverse"
+            type="button"
+            onClick={close}
+          >
+            Cancel
           </button>
-      }
-    </div>
+        </div>
+      </form>
+    :
+      <button className="btn" onClick={open}>
+        Add Category
+      </button>
   )
 }
 
