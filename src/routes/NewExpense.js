@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../DataContext";
 import { stringifyDate, parseDate } from "../dates"
-import "./NewExpense.css"
 
 
 const NewExpense = () => {
@@ -46,8 +45,9 @@ const NewExpense = () => {
 
   return (
     <div className="new-expense">
-      <form onSubmit={handleSubmit} className="new-expense__form">
+      <form onSubmit={handleSubmit} className="input-form">
         <input 
+          className="input-form__input"
           type="text"
           placeholder="Expense name"
           onChange={handleChange}
@@ -56,6 +56,7 @@ const NewExpense = () => {
           required
         />
         <input 
+          className="input-form__input"
           type="number"
           placeholder="Amount"
           onChange={handleChange}
@@ -64,6 +65,7 @@ const NewExpense = () => {
           required
         />
         <select 
+          className="input-form__select"
           value={expenseData.categoryId}
           onChange={handleChange}
           name="categoryId"
@@ -80,16 +82,19 @@ const NewExpense = () => {
           })}
         </select>
         <input 
+          className="input-form__input"
           type="date"
           onChange={handleChange}
           name="date"
           value={stringifyDate(expenseData.date)}
           required
         />
-        <button type="submit" className="btn">Save Expense</button>
-        <button type="button" onClick={cancel} className="btn btn--inverse">
-          Cancel
-        </button>
+        <div className="input-form__row">
+          <button type="submit" className="btn">Save Expense</button>
+          <button type="button" onClick={cancel} className="btn btn--inverse">
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   )

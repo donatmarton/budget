@@ -15,40 +15,44 @@ const MonthSelector = (props) => {
 
   return (
     <div>
-      <form>
-        <select 
-          value={props.month}
-          onChange={handleChange}
-          name="month"
-        >
-          {months.map((month) => {
-            return (
-              <option 
-                key={month.number} 
-                value={month.number}
-              >
-                {month.name}
-              </option>)
-          })}
-        </select>
-        <select 
-          value={props.year}
-          onChange={handleChange}
-          name="year"
-        >
-          <option 
-            key={2021} 
-            value={2021}
+      <form className="input-form">
+        <div className="input-form__row">
+          <select 
+            className="input-form__select"
+            value={props.month}
+            onChange={handleChange}
+            name="month"
           >
-            2021
-          </option>
-          <option 
-            key={2022} 
-            value={2022}
+            {months.map((month) => {
+              return (
+                <option 
+                  key={month.number} 
+                  value={month.number}
+                >
+                  {month.name}
+                </option>)
+            })}
+          </select>
+          <select 
+            className="input-form__select"
+            value={props.year}
+            onChange={handleChange}
+            name="year"
           >
-            2022
-          </option>
-        </select>
+            <option 
+              key={2021} 
+              value={2021}
+            >
+              2021
+            </option>
+            <option 
+              key={2022} 
+              value={2022}
+            >
+              2022
+            </option>
+          </select>
+        </div>
       </form>
     </div>
   )

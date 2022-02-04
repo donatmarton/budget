@@ -27,8 +27,9 @@ const CategoryAdder = (props) => {
       {
         isOpen 
         ? 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="input-form">
             <input 
+              className="input-form__input"
               type="text"
               placeholder="Category name"
               onChange={changeCategoryName}
@@ -36,14 +37,16 @@ const CategoryAdder = (props) => {
               value={categoryName}
               required
             />
-            <button className="btn" type="submit">Save</button>
-            <button 
-              className="btn btn--inverse"
-              type="button"
-              onClick={close}
-            >
-              Cancel
-            </button>
+            <div className="input-form__row">
+              <button className="btn" type="submit">Save</button>
+              <button 
+                className="btn btn--inverse"
+                type="button"
+                onClick={close}
+              >
+                Cancel
+              </button>
+            </div>
           </form>
         :
           <button className="btn" onClick={open}>
