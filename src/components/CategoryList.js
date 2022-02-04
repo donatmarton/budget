@@ -8,18 +8,18 @@ const CategoryList = () => {
   const categoryItems = categories.map( category => {
     return (
       <li 
-        className="category-list__list-item" 
+        className="list-item list-item--category" 
         key={category.id}
       >
         <h4 className="category-list__name">{category.name}</h4>
-        <span title="Edit" className="category-list__button-icon">✏️</span>
-        <span title="Delete" className="category-list__button-icon">❌</span>
+        <span title="Edit" className="button-icon">✏️</span>
+        <span title="Delete" className="button-icon">❌</span>
       </li>
     )
   });
 
   return (
-    <ul className="category-list">
+    <ul className="list list--category">
       {categoryItems}
     </ul>
   )

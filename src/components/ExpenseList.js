@@ -19,7 +19,7 @@ const ExpenseList = ({ expenses }) => {
     )
   })
   return (
-    <ul className="expense-list">
+    <ul className="list list--expense">
       {expenseItems}
     </ul>
   )

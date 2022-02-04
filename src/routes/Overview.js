@@ -21,16 +21,18 @@ const Overview = () => {
   }
   return (
     <main className="main-container">
-      <h3>Sum</h3>
-      <MonthSelector 
-        notifyChange={updateFilter} 
-        year={filterSelection.year}
-        month={filterSelection.month}
-      />
-      <ExpenseSum 
-        beginDate={beginDate}
-        endDate={endDate}
-      />
+      <div>
+        <h3>Sum</h3>
+        <MonthSelector 
+          notifyChange={updateFilter} 
+          year={filterSelection.year}
+          month={filterSelection.month}
+        />
+        <ExpenseSum 
+          beginDate={beginDate}
+          endDate={endDate}
+        />
+      </div>
     </main>
   )
 }
