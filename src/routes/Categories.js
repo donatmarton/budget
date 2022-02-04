@@ -1,11 +1,17 @@
 import React from "react";
+import DataContext from "../DataContext";
 import CategoryList from "../components/CategoryList";
+import CategoryAdder from "../components/CategoryAdder";
+
 
 const Categories = () => {
+  const { addCategory } = React.useContext(DataContext)
+
   return (
-    <div>
+    <main className="main-container">
       <CategoryList />
-    </div>
+      <CategoryAdder addCategory={addCategory}/>
+    </main>
   )
 }
 
