@@ -8,7 +8,10 @@
 .navbar__menu {
   font-size: 1.2rem;
   display: flex;
-  gap: 1rem;
+}
+
+.navbar__logo {
+  color: var(--color-dark);
 }
 
 @media screen and (min-width: 800px) {
@@ -23,4 +26,15 @@
   .navbar__menu {
     font-size: 1.4rem;
   } 
+}
+
+.nav-link {
+  color: var(--color-accent);
+  padding: 0.2rem 0.4rem;
+  transition: ease-in-out 0.2s;
+}
+.nav-link--active {
+  color: var(--color-light);
+  background-color: var(--color-accent);
+  border-radius: 4px;
 }

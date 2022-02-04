@@ -1,5 +1,12 @@
+:root{
+  --color-light: #F5F7FB;
+  --color-dark: black;
+  --color-accent: #4D5B9E;
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: var(--color-light);
 }
 
 h1,

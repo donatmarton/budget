@@ -1,17 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css"
 
 const Navbar = () => {
+  const createNavLinkClassName = ({ isActive }) => {
+    let className = "nav-link "
+    if (isActive) {
+      className += "nav-link--active";
+    }
+    return className;
+  }
   return (
     <nav className="navbar">
-      <Link className="navbar__logo" to="/">
+      <NavLink className="navbar__logo" to="/">
         <h2>💰 Budget 💰</h2>
-      </Link>
+      </NavLink>
       <div className="navbar__menu">
-        <Link to="/">Overview</Link>
-        <Link to="expenses">Expenses</Link>
-        <Link to="categories">Categories</Link>
+        <NavLink to="/" className={createNavLinkClassName}>Overview</NavLink>
+        <NavLink to="expenses" className={createNavLinkClassName}>Expenses</NavLink>
+        <NavLink to="categories" className={createNavLinkClassName}>Categories</NavLink>
       </div>
     </nav>
   )
