@@ -3,6 +3,7 @@ import {nanoid} from 'nanoid'
 import DataContext from './DataContext';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/nav/Navbar';
+import Footer from './components/Footer';
 import { defaultCategories } from "./data"
 import './App.css'
 
@@ -107,6 +108,7 @@ function App() {
       <div className="app">
         <Navbar />
         <Outlet />
+        <Footer />
       </div>
     </DataContext.Provider>
   );
