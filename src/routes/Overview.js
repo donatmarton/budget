@@ -20,7 +20,7 @@ const Overview = () => {
     })
   }
   return (
-    <div>
+    <main className="main-container">
       <h3>Sum</h3>
       <MonthSelector 
         notifyChange={updateFilter} 
@@ -31,7 +31,7 @@ const Overview = () => {
         beginDate={beginDate}
         endDate={endDate}
       />
-    </div>
+    </main>
   )
 }
 
