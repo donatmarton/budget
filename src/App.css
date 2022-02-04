@@ -21,5 +21,7 @@ a {
 }
 
 .app {
-  margin: 0 1rem;
+  padding: 0 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
