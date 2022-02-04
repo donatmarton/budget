@@ -9,7 +9,7 @@ const Overview = () => {
   const { expenses } = React.useContext(DataContext);
 
   const [filterSelection, setFilterSelection] = React.useState({
-    month: 0,
+    month: (new Date().getMonth()),
     year: (new Date().getFullYear()),
   })
   const beginDate = new Date(filterSelection.year, filterSelection.month, 1);
