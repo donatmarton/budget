@@ -1,10 +1,8 @@
 import React from 'react';
 import {nanoid} from 'nanoid'
-import {categoryData, spendingsData} from './data'
 import DataContext from './DataContext';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/nav/Navbar';
-import { parseDate } from './dates';
 import './App.css'
 
 
@@ -13,20 +11,36 @@ function App() {
   const [expenses, setExpenses] = React.useState([]);
 
   React.useEffect(() => {
-    // fetch category data ...
-    setCategories(categoryData);
+    const storedCategories = window.localStorage.getItem('categories');
+    const parsedCategories = JSON.parse(storedCategories)
+    if (parsedCategories) {
+      setCategories(parsedCategories);
+    } else {
+      console.log("initialize defaults")
+    }
   }, [])
+  React.useEffect(() => {
+    window.localStorage.setItem('categories' ,JSON.stringify(categories))
+  }, [categories])
   
   React.useEffect(() => {
-    // fetch expenses data ...
-    const convertedData = spendingsData.map( spending => {
-      return {
-        ...spending,
-        date: parseDate(spending.date),
-      }
-    })
-    setExpenses(convertedData);
+    const storedExpenses = window.localStorage.getItem('expenses');
+    const parsedExpenses = JSON.parse(storedExpenses)
+    if (parsedExpenses) {
+      const convertedData = parsedExpenses.map( spending => {
+        return {
+          ...spending,
+          date: new Date(spending.date),
+        }
+      })
+      setExpenses(convertedData);
+    } else {
+      console.log("no expenses")
+    }
   }, [])
+  React.useEffect(() => {
+    window.localStorage.setItem('expenses' ,JSON.stringify(expenses))
+  }, [expenses])
 
   const addCategory = (categoryName) => {
     const newCategory = {
