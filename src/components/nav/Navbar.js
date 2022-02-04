@@ -10,7 +10,6 @@ const Navbar = () => {
       </Link>
       <div className="navbar__menu">
         <Link to="/">Overview</Link>
-        <Link to="expenses/new">New Expense</Link>
         <Link to="expenses">Expenses</Link>
         <Link to="categories">Categories</Link>
       </div>

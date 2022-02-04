@@ -12,3 +12,7 @@ h3 {
 a {
   text-decoration: none;
 }
+
+.app {
+  margin: 0 1rem;
+}

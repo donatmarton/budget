@@ -1,17 +1,26 @@
 .navbar {
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 1rem;
+  gap: 0.5rem;
 }
-
-.navbar__logo {
-  margin-right: auto;
-}
-
 .navbar__menu {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   display: flex;
   gap: 1rem;
 }
 
-
+@media screen and (min-width: 800px) {
+  .navbar {
+    flex-direction: row;
+  }
+  
+  .navbar__logo {
+    margin-right: auto;
+  }
+  
+  .navbar__menu {
+    font-size: 1.4rem;
+  } 
+}
