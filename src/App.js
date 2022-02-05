@@ -54,6 +54,21 @@ function App() {
       ]
     })
   }
+  const updateCategory = (categoryId, categoryName) => {
+    setCategories( prevState => {
+      const newCategories = prevState.map( category => {
+        if (category.id === categoryId) {
+          return {
+            ...category,
+            name: categoryName,
+          }
+        } else {
+          return category;
+        }
+      })
+      return newCategories;
+    })
+  }
   const deleteCategory = (categoryId) => {
     if (expenses.some(expense => expense.categoryId === categoryId)) {
       alert("Can't delete category if it has expenses recorded with it. Remove expenses first.");
@@ -99,6 +114,7 @@ function App() {
         categories, 
         expenses, 
         addCategory,
+        updateCategory,
         deleteCategory,
         getCategoryNameFromId,
         addExpense,
