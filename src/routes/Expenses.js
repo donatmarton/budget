@@ -9,7 +9,7 @@ const Expenses = () => {
     <main className="main-container">
       <Link to="/expenses/new">
         <button className="btn">
-          New Expense
+          Add Expense
         </button>
       </Link>
       {expenses.length !== 0 ?

@@ -9,8 +9,8 @@ const Categories = () => {
 
   return (
     <main className="main-container">
-      <CategoryList />
       <CategoryAdder addCategory={addCategory}/>
+      <CategoryList />
     </main>
   )
 }
