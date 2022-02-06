@@ -12,6 +12,7 @@ import Categories from './routes/Categories'
 import Category from './routes/Category'
 import Expenses from './routes/Expenses'
 import NewExpense from './routes/NewExpense'
+import EditExpense from './routes/EditExpense';
 import NotFound from './routes/NotFound'
 
 ReactDOM.render(
@@ -24,6 +25,7 @@ ReactDOM.render(
         <Route path="categories/:categoryId" element={<Category />} />
         <Route path="expenses" element={<Expenses />} />
         <Route path="expenses/new" element={<NewExpense />} />
+        <Route path="expenses/edit/:expenseId" element={<EditExpense />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

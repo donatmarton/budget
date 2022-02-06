@@ -12,7 +12,7 @@ const ExpenseForm = (props) => {
     categoryId: DEFAULT_SELECT,
     date: new Date(),
   });
-  console.log(expenseData);
+
   const handleChange = (event) => {
     const name = event.target.name;
     let value = event.target.value;

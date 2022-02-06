@@ -102,6 +102,18 @@ function App() {
       ]
     })
   }
+  const updateExpense = (changedExpenseData) => {
+    setExpenses( prevExpenses => {
+      const newExpenses = prevExpenses.map( expense => {
+        if (expense.id === changedExpenseData.id) {
+          return changedExpenseData;
+        } else {
+          return expense;
+        }
+      })
+      return newExpenses;
+    })
+  }
   const deleteExpense = (expenseId) => {
     setExpenses( prevExpenses => {
       return prevExpenses.filter(expense => expense.id !== expenseId);
@@ -118,6 +130,7 @@ function App() {
         deleteCategory,
         getCategoryNameFromId,
         addExpense,
+        updateExpense,
         deleteExpense,
       }}
     >

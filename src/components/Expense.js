@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import DataContext from "../DataContext"
 import './Expense.css'
 
 const Expense = (props) => {
   const { deleteExpense } = React.useContext(DataContext);
+  const navigate = useNavigate();
 
   const {id, amount, name, category, date} = props;
   return (
@@ -16,6 +18,7 @@ const Expense = (props) => {
         <span 
           title="Edit" 
           className="button-icon"
+          onClick={() => navigate(`edit/${id}`)}
         >
         ✏️
         </span>
