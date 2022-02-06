@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ExpenseSum from "../components/ExpenseSum";
 import CategorySums from "../components/CategorySums";
 import MonthSelector from "../components/MonthSelector";
@@ -43,6 +44,11 @@ const Overview = () => {
           endDate={endDate}
         />
       </div>
+      <Link to="/expenses/new">
+        <button className="btn">
+          Add Expense
+        </button>
+      </Link>
     </main>
   )
 }
