@@ -13,7 +13,7 @@ const ExpenseSum = ({ beginDate, endDate}) => {
     setSum(summedAmounts)
   }, [filteredExpenses])
   return (
-    <span>€ {sum.toFixed(2)}</span>
+    <span className="total-sum__number">€ {sum.toFixed(2)}</span>
   )
 }
 
