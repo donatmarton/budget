@@ -22,9 +22,8 @@ ReactDOM.render(
         <Route index element={<Overview />} />
         <Route path="categories" element={<Categories />} />
         <Route path="categories/:categoryId" element={<Category />} />
-        <Route path="expenses" element={<Expenses />}>
-          <Route path="new" element={<NewExpense />} />
-        </Route>
+        <Route path="expenses" element={<Expenses />} />
+        <Route path="expenses/new" element={<NewExpense />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

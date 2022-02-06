@@ -44,7 +44,8 @@ const NewExpense = () => {
   }
 
   return (
-    <div className="new-expense">
+    <main className="main-container">
+      <h2>Add new expense</h2>
       <form onSubmit={handleSubmit} className="input-form">
         <input 
           className="input-form__input"
@@ -97,7 +98,7 @@ const NewExpense = () => {
           </button>
         </div>
       </form>
-    </div>
+    </main>
   )
 }
 
