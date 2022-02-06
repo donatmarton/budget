@@ -34,6 +34,7 @@ const CategoryAdder = (props) => {
           name="categoryName"
           value={categoryName}
           required
+          autoFocus
         />
         <div className="input-form__row">
           <button className="btn" type="submit">Save</button>

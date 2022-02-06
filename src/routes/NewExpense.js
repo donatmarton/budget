@@ -54,6 +54,7 @@ const NewExpense = () => {
           name="name"
           value={expenseData.name}
           required
+          autoFocus
         />
         <input 
           className="input-form__input"
