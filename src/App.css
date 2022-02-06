@@ -75,6 +75,16 @@ a {
   width: 100%;
   text-align: center;
 }
+.input-form__input--inline {
+  border-radius: 0;
+  text-align: left;
+  background-color: transparent;
+  padding: 0;
+  margin: calc(0.5rem - 2px) 0;
+  font-size: 1rem;
+  margin-right: auto;
+  vertical-align: middle;
+}
 
 .main-container {
   display: flex;
@@ -108,5 +118,8 @@ a {
   cursor: pointer;
 }
 .list-item:hover .button-icon{
+  display: inline-block;
+}
+.button-icon--not-hidden {
   display: inline-block;
 }

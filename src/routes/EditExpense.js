@@ -1,12 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import DataContext from "../DataContext";
+import { useNavigate, useParams } from "react-router-dom";
 import ExpenseForm from "../components/ExpenseForm";
 
 
-const NewExpense = () => {
-  const { addExpense } = React.useContext(DataContext);
-  
+const EditExpense = () => {
+  const { expenses, updateExpense } = React.useContext(DataContext);
+  const { expenseId } = useParams();
+
   const navivate = useNavigate();
 
   const handleCancel = () => {
@@ -14,20 +15,25 @@ const NewExpense = () => {
   }
 
   const handleSubmit = (expenseData) => {
-    addExpense(expenseData);
+    updateExpense({
+      ...expenseData,
+      id: expenseId,
+    });
     navivate("/expenses");
   }
 
+  const editedExpense = expenses.find( expense => expense.id === expenseId )
+
   return (
     <main className="main-container">
-      <h2>Add new expense</h2>
+      <h2>Edit expense</h2>
       <ExpenseForm 
         handleSubmit={handleSubmit}
         handleCancel={handleCancel}
-        populateData={null}
+        populateData={editedExpense}
       />
     </main>
   )
 }
 
-export default NewExpense;
+export default EditExpense;

@@ -10,5 +10,5 @@ Personal budgeting tool. Available live at [budget.donatmarton.com](https://budg
 - [x] sum monthly spendings
 - [x] saving data to local storage
 - [x] delete expenses and categories
-- [ ] modify expenses and categories
+- [x] modify expenses and categories
 - [ ] monthly sum is split into categories
