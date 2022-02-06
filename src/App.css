@@ -51,12 +51,14 @@ a {
   align-items: center;
   gap: 0.6rem;
   width: 50%;
-  min-width: 180px;
+  min-width: 200px;
   max-width: 300px;  
 }
 .input-form__row {
   display: flex;
+  justify-content: center;
   gap: 0.6rem;
+  width: 100%;
 }
 .input-form__input {
   border: 0;
@@ -64,6 +66,7 @@ a {
   border-radius: 7px;
   width: 100%;
   text-align: center;
+  justify-content: center;
 }
 .input-form__select {
   border: 0;

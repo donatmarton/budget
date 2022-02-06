@@ -14,47 +14,45 @@ const MonthSelector = (props) => {
   }
 
   return (
-    <div>
-      <form className="input-form">
-        <div className="input-form__row">
-          <select 
-            className="input-form__select"
-            value={props.month}
-            onChange={handleChange}
-            name="month"
+    <form className="input-form">
+      <div className="input-form__row">
+        <select 
+          className="input-form__select"
+          value={props.month}
+          onChange={handleChange}
+          name="month"
+        >
+          {months.map((month) => {
+            return (
+              <option 
+                key={month.number} 
+                value={month.number}
+              >
+                {month.name}
+              </option>)
+          })}
+        </select>
+        <select 
+          className="input-form__select"
+          value={props.year}
+          onChange={handleChange}
+          name="year"
+        >
+          <option 
+            key={2021} 
+            value={2021}
           >
-            {months.map((month) => {
-              return (
-                <option 
-                  key={month.number} 
-                  value={month.number}
-                >
-                  {month.name}
-                </option>)
-            })}
-          </select>
-          <select 
-            className="input-form__select"
-            value={props.year}
-            onChange={handleChange}
-            name="year"
+            2021
+          </option>
+          <option 
+            key={2022} 
+            value={2022}
           >
-            <option 
-              key={2021} 
-              value={2021}
-            >
-              2021
-            </option>
-            <option 
-              key={2022} 
-              value={2022}
-            >
-              2022
-            </option>
-          </select>
-        </div>
-      </form>
-    </div>
+            2022
+          </option>
+        </select>
+      </div>
+    </form>
   )
 }
 
