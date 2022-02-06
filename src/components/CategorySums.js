@@ -27,7 +27,7 @@ const CategorySums = ({ beginDate, endDate }) => {
     categorySumElements.push(
       <div key={categoryId} className="category-sum__item">
         <h4 className="category-sum__category">{category}</h4>
-        <span className="category-sum__number">€ {sum}</span>
+        <span className="category-sum__number">€ {sum.toFixed(2)}</span>
       </div>
     )
   }
